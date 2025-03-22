@@ -26,6 +26,16 @@ class LinkedList:
             print(current.data)
             current = current.next
 
+    def reverse(self):
+        prev = None
+        current = self.head
+        while current != None:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+        self.head = prev
+
 list = LinkedList()
 
 list.addNode(Node(12))
@@ -35,4 +45,9 @@ list.addNode(Node(32))
 list.addNode(Node(18))
 
 print("===== print =====")
+list.printList()
+
+print("==================")
+
+list.reverse()
 list.printList()
