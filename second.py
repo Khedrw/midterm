@@ -35,12 +35,14 @@ class Car:
                 print(f"The tank has been filled with {amount}L, and now it is {self.__fuel}L")
 
     def get_remaining_range(self):
-        print(f"the maximum distance the car can travel with the current fuel level is {self.__fuel/0.1}L")
+        print(f"the maximum distance the car can travel with the current fuel level is {self.__fuel/0.1}KM")
 
     def setter(self, new_amount_of_fuel):
         self.__fuel = new_amount_of_fuel
+        print(f"The car tank has {self.__fuel}L of gasoline")
 
     def getter(self):
+        print(f"The current level of gasoline = {self.__fuel}L")
         return self.__fuel
 
 the_car = Car(0)
@@ -57,7 +59,7 @@ def gettheremainingrange():
     the_car.get_remaining_range()
 
 def setter():
-    a = 51
+    a = int(input("Enter the new value for the tank "))
     while a < 0 or a > 50:
         print ("Invalid values, note that the tank range is between (0 ; 50)L")
         a = int(input("Enter the new value for the tank "))
